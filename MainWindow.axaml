@@ -8,7 +8,7 @@
         x:Class="GDPadDotnet.MainWindow"
         RequestedThemeVariant="Dark"
         Background="#1f1f1f"
-        Title="GDPadDotnet">
+        Title="{DynamicResource WindowTitleString}">
     <Grid RowDefinitions="100,*">
         <TextBlock 
             HorizontalAlignment="Center" 
