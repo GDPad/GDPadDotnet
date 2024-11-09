@@ -15,7 +15,7 @@ jobs:
         runs-on: ${{ matrix.config.os }}
 
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@main
 
             - name: Get .NET 8
               uses: actions/setup-dotnet@v4
