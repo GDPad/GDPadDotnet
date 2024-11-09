@@ -27,7 +27,6 @@ There are two ways to install it:
 #### If you want to run the app from flatpak:
 
 - [Install flatpak for your distro](https://flatpak.org/setup/)
-
 - `flatpak run org.gdpad.dotnet`
 
 
