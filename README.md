@@ -5,7 +5,7 @@ A tool for configuring your GDPad Device.
 ![image](https://github.com/user-attachments/assets/786e18a1-c073-4fe7-9d13-2aff9141141d)
 
 
-## Install on Windows
+## Run on Windows
 
 
 - [Install .NET Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-8.0.10-windows-x64-installer)
@@ -14,7 +14,7 @@ A tool for configuring your GDPad Device.
 
 
 
-## Install on Linux
+## Run on Linux
 
 There are two ways to install it: 
 
