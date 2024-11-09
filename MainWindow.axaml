@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        MinWidth="450" MinHeight="600"
+        MaxWidth="450" MaxHeight="600"
+        x:Class="GDPadDotnet.MainWindow"
+        RequestedThemeVariant="Dark"
+        Background="#1f1f1f"
+        Title="GDPadDotnet">
+    <Grid RowDefinitions="100,*">
+        <TextBlock 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            FontSize="25"
+            FontWeight="DemiBold"
+            Text="{DynamicResource WindowTitleString}"
+            />
+        <Grid Grid.Row="1" Margin="20" RowDefinitions="250,*">
+            <Image Source="avares://GDPadDotnet/Assets/Images/gdpad.png" Width="300" />
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="{DynamicResource PollingRateString}" />
+                        <Image 
+                            VerticalAlignment="Center" 
+                            Margin="10,0,0,0" 
+                            Source="avares://GDPadDotnet/Assets/Icons/question.png" 
+                            Width="15" 
+                            Opacity="0.5"
+                            Cursor="Hand"
+                            ToolTip.Tip="{DynamicResource PollingRateDescriptionString}"
+                            />
+                    </StackPanel>
+                    
+                    <Grid ColumnDefinitions="*,50">
+                        <Slider 
+                            x:Name="PollingRateSlider" 
+                            Minimum="1000" 
+                            Maximum="8000"
+                            Value="1000"
+                            IsSnapToTickEnabled="True"
+                            TickFrequency="1000"
+                            />
+                        <TextBlock 
+                            Grid.Column="1" 
+                            HorizontalAlignment="Right" 
+                            VerticalAlignment="Center"
+                            Text="{Binding Value, Mode=TwoWay, ElementName=PollingRateSlider, StringFormat={}{0:0}}"
+                            />
+                    </Grid>
+                </StackPanel>
+                <Grid Margin="0,20,0,0" ColumnDefinitions="*,50">
+                    <TextBlock VerticalAlignment="Center" Text="{DynamicResource HightlightColorString}" />
+                    <ColorPicker 
+                        Grid.Column="1" 
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Center" 
+                        />
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

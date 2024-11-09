@@ -1,0 +1,9 @@
+bin
+obj
+flatpak
+.flatpak-builder
+repo
+tmp**/
+.cache
+.vs
+.vscode
