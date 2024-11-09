@@ -31,9 +31,12 @@ jobs:
               with:
                 python-version: '3.12.7' 
             
-            - name: Get Flatpak
-              run: sudo apt install flatpak
+            - name: Update packages and get Flatpak & Flatpak Builder
+              run: sudo apt-get update && sudo apt-get upgrade && sudo apt-get install -y flatpak flatpak-builder
             
+            - name: Install Flathub Repo
+              run: flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
             - name: Generate NuGet sources
               run: ./FlatpakScripts/generate_nuget_sources.sh
               shell: bash
