@@ -36,9 +36,7 @@ There are two ways to install it:
 #### In case of the .NET binary for Linux, you can run it from the terminal in the unpacked directory:
 
 - [Install .NET Runtime for Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux?WT.mc_id=dotnet-35129-website)
+- `./GDPadDotnet`
 
 
 On Arch (btw) and it's derivatives you can install .NET Runtime with `sudo pacman -S dotnet-runtime-8.0`.
-
-
-- `./GDPadDotnet`
