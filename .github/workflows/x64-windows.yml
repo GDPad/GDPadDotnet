@@ -1,4 +1,4 @@
-name: Build Flatpak for Linux x64
+name: Build Flatpak for Windows x64
 
 on: 
     workflow_dispatch: 
