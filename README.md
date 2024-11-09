@@ -18,14 +18,14 @@
 
 There are two ways to install it: 
 
-- **Download Flatpak bundle from Releases**
+1. **Download Flatpak bundle from Releases**
     - [Install flatpak for your distro](https://flatpak.org/setup/)
     - Run `flatpak install gdpad.net.flatpak` from the terminal in your downloaded file's directory
     - Run `flatpak run org.gdpad.dotnet`
 
 
 
-- **Using Binaries from the** `x64-linux-native.tar.gz` **archive**
+2. **Using Binaries from the** `x64-linux-native.tar.gz` **archive**
     - [Install .NET Runtime for Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux?WT.mc_id=dotnet-35129-website)
     - Run `./GDPadDotnet` from the terminal in the extracted directory
 
