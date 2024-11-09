@@ -7,3 +7,5 @@ tmp**/
 .cache
 .vs
 .vscode
+build-dir
+nuget-sources.json
