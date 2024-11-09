@@ -27,7 +27,7 @@ jobs:
                 dotnet-version: '8.0.300'
 
             - name: Publish Windows app with .NET 8
-              run: dotnet publish -c Release --self-contained true
+              run: dotnet publish -c Release --self-contained true -p:PublishSingleFile=true
             
             - uses: actions/upload-artifact@v4
               with:
