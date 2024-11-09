@@ -39,4 +39,4 @@ There are two ways to install it:
 - `./GDPadDotnet`
 
 
-On Arch (btw) and it's derivatives you can install .NET Runtime with `sudo pacman -S dotnet-runtime-8.0`.
+On **Arch (btw)** and it's *derivatives* you can install .NET Runtime with `sudo pacman -S dotnet-runtime-8.0`.
