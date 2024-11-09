@@ -12,7 +12,7 @@ jobs:
             fail-fast: false
             matrix:
                 config:
-                    - name: Linux (x64)
+                    - name: Flatpak Linux (x64)
                       os: ubuntu-latest
                     
         name: ${{ matrix.config.name }}
@@ -36,6 +36,13 @@ jobs:
             
             - name: Install Flathub Repo
               run: flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+            
+            - name: Restore Flatpak cache
+              uses: actions/cache@v3
+              with:
+                path: |
+                  ~/.local/share/flatpak/repo
+                  ~/.local/share/flatpak/runtime
 
             - name: Install Flatpak dependencies (first round)
               run: ./FlatpakScripts/install_flatpak_dependencies.sh
