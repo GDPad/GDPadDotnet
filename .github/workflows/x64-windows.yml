@@ -12,7 +12,7 @@ jobs:
             fail-fast: false
             matrix:
                 config:
-                    - name: Linux (x64, to speed up the building process)
+                    - name: Windows (x64)
                       os: ubuntu-latest
                     
         name: ${{ matrix.config.name }}
@@ -25,9 +25,9 @@ jobs:
               uses: actions/setup-dotnet@v4
               with:
                 dotnet-version: '8.0.300'
-                
+
             - name: Publish Windows app with .NET 8
-              run: dotnet publish -c Release --self-contained true -p:PublishSingleFile=true
+              run: dotnet publish -c Release --self-contained true -p:PublishSingleFile=true -r win-x64
             
             - uses: actions/upload-artifact@v4
               with:
