@@ -31,6 +31,9 @@ jobs:
               with:
                 python-version: '3.12.7' 
             
+            - name: Get Flatpak
+              run: sudo apt install flatpak
+            
             - name: Generate NuGet sources
               run: ./FlatpakScripts/generate_nuget_sources.sh
               shell: bash
