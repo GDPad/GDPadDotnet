@@ -40,6 +40,10 @@ jobs:
             - name: Install Flatpak dependencies (first round)
               run: ./FlatpakScripts/install_flatpak_dependencies.sh
               shell: bash
+
+            - name: Get Flatpak Dotnet generator Python script
+              run: wget https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/dotnet/flatpak-dotnet-generator.py
+              working-directory: ./FlatpakScripts
           
             - name: Generate NuGet sources
               run: ./FlatpakScripts/generate_nuget_sources.sh
@@ -60,4 +64,3 @@ jobs:
               with:
                 name: Flatpak Bundle
                 path: gdpad.net.flatpak
-                
