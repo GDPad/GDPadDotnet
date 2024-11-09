@@ -5,10 +5,10 @@ A tool for configuring your GDPad Device.
 ![image](https://github.com/user-attachments/assets/786e18a1-c073-4fe7-9d13-2aff9141141d)
 
 
-# Download
+## Download
 
 
-## =======================Windows=======================
+### =======================Windows=======================
 
 - [Install .NET Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-8.0.10-windows-x64-installer)
 
@@ -16,7 +16,7 @@ A tool for configuring your GDPad Device.
 
 
 
-## =======================Linux=======================
+### =======================Linux=======================
 
 There are two ways to install it: 
 
@@ -26,7 +26,7 @@ There are two ways to install it:
 
 
 
-### If you want to run the app from flatpak:
+#### If you want to run the app from flatpak:
 
 - [Install flatpak for your distro](https://flatpak.org/setup/)
 
@@ -34,7 +34,7 @@ There are two ways to install it:
 
 
 
-### In case of the .NET binary for Linux, you can run it from the terminal in the unpacked directory:
+#### In case of the .NET binary for Linux, you can run it from the terminal in the unpacked directory:
 
 - [Install .NET Runtime for Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux?WT.mc_id=dotnet-35129-website)
 
