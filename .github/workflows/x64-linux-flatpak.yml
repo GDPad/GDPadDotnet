@@ -40,6 +40,7 @@ jobs:
             - name: Restore Flatpak cache
               uses: actions/cache@v3
               with:
+                key: linux-flatpak-stable
                 path: |
                   ~/.local/share/flatpak/repo
                   ~/.local/share/flatpak/runtime
