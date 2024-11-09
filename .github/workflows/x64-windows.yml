@@ -1,4 +1,4 @@
-name: Publish for Windows x64
+name: Publish Windows x64
 
 on: workflow_dispatch
 

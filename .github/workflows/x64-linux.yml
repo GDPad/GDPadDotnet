@@ -1,4 +1,4 @@
-name: Publish Native for Linux x64
+name: Publish Linux x64
 
 on: workflow_dispatch
 
