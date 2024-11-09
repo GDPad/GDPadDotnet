@@ -9,7 +9,6 @@ A tool for configuring your GDPad Device.
 
 
 - [Install .NET Runtime for Windows](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-8.0.10-windows-x64-installer)
-
 - Go to the [GitHub Releases](https://github.com/GDPad/GDPad.NET/releases) page and select the latest archive for Windows.
 
 
