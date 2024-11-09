@@ -9,3 +9,4 @@ tmp**/
 .vscode
 build-dir
 nuget-sources.json
+FlatpakScripts/flatpak-dotnet-generator.py
