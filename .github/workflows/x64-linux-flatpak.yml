@@ -1,0 +1,44 @@
+name: Build Flatpak for Linux x64
+
+on: 
+    workflow_dispatch: 
+    push:
+        branches: 
+            - '**'
+
+jobs:
+    build:
+        strategy:
+            fail-fast: false
+            matrix:
+                config:
+                    - name: Linux (x64)
+                      os: ubuntu-latest
+                    
+        name: ${{ matrix.config.name }}
+        runs-on: ${{ matrix.config.os }}
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Get .NET 8
+              uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: '8.0.300'
+
+            - name: Get Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.12.7' 
+            
+            - name: Generate NuGet sources
+              run: ./FlatpakScripts/generate_nuget_sources.sh
+              shell: bash
+            
+            - name: Install Flatpak dependencies
+              run: ./FlatpakScripts/install_flatpak_dependencies.sh
+              shell: bash
+            
+            - name: Build and install Flatpak
+              run: ./FlatpakScripts/build_ant_install.sh
+              shell: bash
