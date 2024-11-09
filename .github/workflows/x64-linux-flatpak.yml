@@ -37,10 +37,7 @@ jobs:
             - name: Install Flathub Repo
               run: flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-            - name: Install Dotnet into Flatpak
-              run: flatpak install org.freedesktop.Sdk.Extension.dotnet8/x86_64/23.08 --user --assumeyes
-
-            - name: Install Flatpak dependencies first
+            - name: Install Flatpak dependencies (first round)
               run: ./FlatpakScripts/install_flatpak_dependencies.sh
               shell: bash
           
@@ -48,10 +45,19 @@ jobs:
               run: ./FlatpakScripts/generate_nuget_sources.sh
               shell: bash
             
-            - name: Install Flatpak dependencies second
+            - name: Install Flatpak dependencies (repeat)
               run: ./FlatpakScripts/install_flatpak_dependencies.sh
               shell: bash
             
             - name: Build and install Flatpak
               run: ./FlatpakScripts/build_and_install.sh
               shell: bash
+            
+            - name: Bundle the app
+              run: flatpak build-bundle repo gdpad.net.flatpak org.gdpad.dotnet --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
+
+            - uses: actions/upload-artifact@v4
+              with:
+                name: Flatpak Bundle
+                path: gdpad.net.flatpak
+                
