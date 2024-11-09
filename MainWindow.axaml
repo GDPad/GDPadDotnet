@@ -18,7 +18,7 @@
             Text="{DynamicResource WindowTitleString}"
             />
         <Grid Grid.Row="1" Margin="20" RowDefinitions="250,*">
-            <Image Source="avares://GDPadDotnet/Assets/Images/gdpad.png" Width="300" />
+            <Image Source="/Assets/Images/gdpad.png" Width="300" />
             <StackPanel Grid.Row="1" VerticalAlignment="Center">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -26,7 +26,7 @@
                         <Image 
                             VerticalAlignment="Center" 
                             Margin="10,0,0,0" 
-                            Source="avares://GDPadDotnet/Assets/Icons/question.png" 
+                            Source="/Assets/Icons/question.png" 
                             Width="15" 
                             Opacity="0.5"
                             Cursor="Hand"
