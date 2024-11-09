@@ -32,10 +32,13 @@ jobs:
                 python-version: '3.12.7' 
             
             - name: Update packages and get Flatpak & Flatpak Builder
-              run: sudo apt-get update && sudo apt-get upgrade && sudo apt-get install -y flatpak flatpak-builder
+              run: sudo apt-get update && sudo apt-get install -y flatpak flatpak-builder
             
             - name: Install Flathub Repo
               run: flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+            - name: Install Dotnet into Flatpak
+              run: flatpak install org.freedesktop.Sdk.Extension.dotnet8/x86_64/23.08 --user
 
             - name: Generate NuGet sources
               run: ./FlatpakScripts/generate_nuget_sources.sh
@@ -46,5 +49,5 @@ jobs:
               shell: bash
             
             - name: Build and install Flatpak
-              run: ./FlatpakScripts/build_ant_install.sh
+              run: ./FlatpakScripts/build_and_install.sh
               shell: bash
