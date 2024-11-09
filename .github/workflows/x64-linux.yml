@@ -1,0 +1,35 @@
+name: Build Native for Linux x64
+
+on: 
+    workflow_dispatch: 
+    push:
+        branches: 
+            - '**'
+
+jobs:
+    build:
+        strategy:
+            fail-fast: false
+            matrix:
+                config:
+                    - name: Linux (x64)
+                      os: ubuntu-latest
+                    
+        name: ${{ matrix.config.name }}
+        runs-on: ${{ matrix.config.os }}
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Get .NET 8
+              uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: '8.0.300'
+
+            - name: Publish Linux app with .NET 8
+              run: dotnet publish -c Release --self-contained true -p:PublishSingleFile=true -r linux-x64
+
+            - uses: actions/upload-artifact@v4
+              with:
+                name: GDPadDotnet Linux Bundle
+                path: bin/Release/net8.0/linux-x64/publish/
