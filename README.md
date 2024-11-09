@@ -2,6 +2,8 @@
 
 A tool for configuring your GDPad Device.
 
+![image](https://github.com/user-attachments/assets/786e18a1-c073-4fe7-9d13-2aff9141141d)
+
 
 # Download
 
